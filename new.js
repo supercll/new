@@ -1,11 +1,10 @@
-function _new(Class, ...args) {
-    if (!(Class instanceof Function)) {
-        throw new TypeError("must be a FunctionF")
+function _new(Func, ...args) {
+    if (!(Func instanceof Function)) {
+        throw new TypeError("must be a FunctionF");
     }
 
-    var obj = Object.create(Class.prototype);
-    
-
+    var obj = Object.create(Func.prototype);
+    var res = Func.call(obj, ...args);
 }
 
 let sanmao = _new(Dog, "三毛");
