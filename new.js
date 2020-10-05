@@ -3,6 +3,9 @@ function _new(Class, ...args) {
         throw new TypeError("must be a FunctionF")
     }
 
+    var obj = Object.create(Class.prototype);
+    
+
 }
 
 let sanmao = _new(Dog, "三毛");
