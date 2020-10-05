@@ -1,3 +1,13 @@
+Object.prototype.create = function (prototype) {
+    if (!(prototype instanceof Object)) {
+        throw new TypeError("prototype must be an Object");
+    }
+
+    function Temp() {}
+    Temp.prototype = prototype;
+    return new Temp();
+};
+
 function _new(Func, ...args) {
     if (!(Func instanceof Function)) {
         throw new TypeError("must be a FunctionF");
