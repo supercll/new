@@ -5,6 +5,11 @@ function _new(Func, ...args) {
 
     var obj = Object.create(Func.prototype);
     var res = Func.call(obj, ...args);
+
+    if (res instanceof Object) {
+        return res;
+    }
+    return obj;
 }
 
 let sanmao = _new(Dog, "三毛");
