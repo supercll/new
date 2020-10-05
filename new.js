@@ -1,5 +1,8 @@
 function _new(Class, ...args) {
-    
+    if (!(Class instanceof Function)) {
+        throw new TypeError("must be a FunctionF")
+    }
+
 }
 
 let sanmao = _new(Dog, "三毛");
